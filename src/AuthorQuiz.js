@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './bootstrap.min.css';
+import Nocheckbox from './Nocheckbox';
 
 function Hero() {
   return (<div className="row">
@@ -50,6 +51,7 @@ function AuthorQuiz({turnData}) {
         <Turn {...turnData}/>
         <Continue />
         <Footer />
+        {/* <Nocheckbox /> */}
       </div>
     );
 }
