@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import './bootstrap.min.css';
 import Nocheckbox from './Nocheckbox';
+import EventCounter from './EventCounter'
 
 function Hero() {
   return (<div className="row">
@@ -13,13 +14,13 @@ function Hero() {
   </div>);
 }
 
-function Book({title}) {
+function Book({ title }) {
   return (<div className="answer">
     <h4>{title}</h4>
   </div>);
 }
 
-function Turn({author, books}) {
+function Turn({ author, books }) {
   return (<div className="row turn" style={{ backgroundColor: "white" }}>
     <div className="col-4 offset-1">
       <img src={author.imageUrl} className="authorimage" alt="Author" />
@@ -44,16 +45,17 @@ function Footer() {
   </div>);
 }
 
-function AuthorQuiz({turnData}) {
-    return (
-      <div className="container-fluid">
-        <Hero />
-        <Turn {...turnData}/>
-        <Continue />
-        <Footer />
-        {/* <Nocheckbox /> */}
-      </div>
-    );
+function AuthorQuiz({ turnData }) {
+  return (
+    <div className="container-fluid">
+      <Hero />
+      <Turn {...turnData} />
+      <Continue />
+      <Footer />
+      {/* <Nocheckbox /> */}
+      {/* <EventCounter onEventClick={(data) => { console.log(`even ${data}`); }} /> */}
+    </div>
+  );
 }
 
 export default AuthorQuiz;

@@ -1,16 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class EventCounter extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {clicks: 0};
+        this.state = { clicks: 0 };
         this.clickHandler = this.clickHandler.bind(this);
     }
 
     clickHandler(event) {
         const clickNew = this.state.clicks + 1;
-        this.setState({clicks: clickNew});
+        this.setState({ clicks: clickNew });
         if (clickNew % 2 === 0) {
             this.props.onEventClick(clickNew);
         }
@@ -23,7 +22,4 @@ class EventCounter extends React.Component {
     }
 }
 
-ReactDOM.render(<EventCounter onEventClick={(data) =>
-    {console.log(`even ${data}`);}}/>, 
-    document.getElementById('root')
-);
+export default EventCounter;
